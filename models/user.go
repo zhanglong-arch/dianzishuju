@@ -2,8 +2,7 @@ package models
 
 import (
 	"BeegoDemo/db_mysql"
-	"crypto/md5"
-	"encoding/hex"
+	"BeegoDemo/util"
 	"fmt"
 )
 
@@ -18,10 +17,7 @@ type User struct {
  */
 func (u User) SaveUser()(int64,error){
 	//1、密码脱敏处理（hash加密）
-	hashMd5 := md5.New()
-	hashMd5.Write([]byte(u.Password))
-	bytes := hashMd5.Sum(nil)
-	u.Password = hex.EncodeToString(bytes)
+	u.Password = util.MD5HashString(u.Password)
 	//执行数据库操作
 	fmt.Println("将要保存的手机号码：", u.Phone, "密码：", u.Password)
 	result, err := db_mysql.Db.Exec("insert into user(phone, password) values(?,?)", u.Phone, u.Password)
@@ -32,18 +28,20 @@ func (u User) SaveUser()(int64,error){
 	if err != nil {
 		return -1, err
 	}
-	return id, err
+	return id, nil
 }
 
 /**
  * 查询用户信息
  */
 func (u User) QueryUser()(*User,error){
+	u.Password = util.MD5HashString(u.Password)
 	row := db_mysql.Db.QueryRow("select phone from user where phone = ? and password = ? ",
 		u.Phone, u.Password)
-	err := row.Scan(&u.Phone)
+	err := row.Scan(&u.Password)
 	if err != nil {
 		return nil,err
 	}
 	return &u,nil
+
 }

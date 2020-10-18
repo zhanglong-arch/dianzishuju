@@ -24,13 +24,13 @@ func (l *LoginController) Get(){
  	var user models.User
  	err := l.ParseForm(&user)
  	if err != nil{
- 		l.Ctx.WriteString("抱歉，用户解析失败，请重试！")
+ 		l.TplName="error.html"
 		return
 	}
 	//查询数据库的用户信息
 	u, err := user.QueryUser()
 	if err != nil{
-		l.Ctx.WriteString("抱歉，用户登录失败，请重试！")
+		l.TplName="error.html"
 		return
 	}
 	//登录成功，跳转项目核心功能页面（home.html）
