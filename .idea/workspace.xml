@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09be76b7-8242-4a6c-a126-9043afd0fc0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockchain/block.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/userPwdConreoller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/uploadRecord.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/app-5e0455372927b43eec8b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/common-5e0455372927b43eec8b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/4f563b790d37464608590a83b766edb8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/sign-in-bg-5JlvAfR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/微信图片_20201009143342.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/微信图片_20201009143354.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/微信图片_20201009143354.jpgae864dda7e622634b3c5482560a6369b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/微信图片_20201009143402.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/hash.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/cert_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/list_record.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userHomeController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userHomeController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userLoginController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userLoginController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userRegisterController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userRegisterController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app-f03c3be68c19ce58d4ff.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/app-f03c3be68c19ce58d4ff.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
