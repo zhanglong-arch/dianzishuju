@@ -25,13 +25,25 @@ type Block struct {
  * 新建一个区块实例，并返回该区块
  */
 func NewBlock(height int64, data []byte, prevHash []byte) (Block){
+	//1、构建一个block实例，用于生成区块
+
 	block := Block{
-		Height:    height + 1,
+		Height:    height,
 		TimeStamp: time.Now().Unix(),
 		Data:      data,
 		PrevHash:  prevHash,
 		Version:   "0x01",
 	}
+
+	//2、为新生成的block，寻找合适的nonce值
+	pow := NewPow(block)
+	nonce := pow.Run()
+
+	//3、将block的Nonce设置为找到的合适的nonce数
+	block.Nonce = nonce
+
+
+
 	//调用util.SHA256Hash进行hash计算
 	/**
 	 * 问题分析：
@@ -46,6 +58,7 @@ func NewBlock(height int64, data []byte, prevHash []byte) (Block){
 	heightBytes, _ := util.IntToBytes(block.Height)
 	timeBytes, _ := util.IntToBytes(block.TimeStamp)
 	versionBytes := util.StringToBytes(block.Version)
+	nonceBytes, _ := util.IntToBytes(block.Nonce)
 	//bytes.Join函数，用于[]byte的拼接
 	blockBytes := bytes.Join([][]byte{
 		heightBytes,
@@ -53,7 +66,13 @@ func NewBlock(height int64, data []byte, prevHash []byte) (Block){
 		data,
 		prevHash,
 		versionBytes,
+		nonceBytes,
 	}, []byte{})
+
+	//4、设置第7个字段
 	block.Hash = util.SHA256Hash(blockBytes)
+
+
+
 	return block
 }
