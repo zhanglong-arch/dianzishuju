@@ -1,18 +1,22 @@
 package models
 
-import "BeegoDemo/db_mysql"
+import (
+	"BeegoDemo/db_mysql"
+	"BeegoDemo/util"
+)
 
 /**
  * 上传文件记录的   结构体定义
  */
 type UploadRecord struct {
-	Id        int
-	FileName  string
-	FileSize  int64
-	FileCert  string//认证号
-	FileTitle string
-	CertTime  int64
-	Phone     string//对应的用户的phone
+	Id        		 int
+	FileName 		 string
+	FileSize 		 int64
+	FileCert 		 string //认证号
+	FileTitle		 string
+	CertTime 		 int64
+	FormatCertTime   string //格式化时间，仅在前段展示页面使用
+	Phone    		 string //对应的用户的phone
 }
 
 /**
@@ -53,6 +57,8 @@ func QueryRecordBtPhone(phone string)([]UploadRecord, error){
 		if err != nil{
 			return nil,err
 		}
+		//时间转换 record.CertTime
+		record.FormatCertTime = util.TimeFormat(record.CertTime,0,util.TIME_FORMAT_THREE)
 		records = append(records, record)
 	}
 	return records,nil
