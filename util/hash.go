@@ -37,7 +37,7 @@ func SHA256Hash(data []byte) ([]byte) {
 
 	//2、对拼接后的数据进行sha256
 	sha256Hash := sha256.New()
-	sha256Hash.Write([]byte(""))
+	sha256Hash.Write(data)
 	return sha256Hash.Sum(nil)
 }
 
