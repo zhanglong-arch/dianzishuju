@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"BeegoDemo/blockchain"
 	"BeegoDemo/models"
 	"BeegoDemo/util"
 	"bufio"
@@ -87,6 +88,14 @@ func (r *HomeController) Post(){
 		r.Ctx.WriteString("抱歉，数据认证错误，请重试")
 		return
 	}
+	//新增逻辑：将要认证的文件hash值及个人实名信息，保存到区块链上，即上链
+	_, err = blockchain.CHAIN.SaveData([]byte(hash))
+	if err != nil{
+		r.Ctx.WriteString("抱歉，认证数据上链失败，请重试")
+		return
+	}
+
+
 	//4、从数据库中读取phone用户对应的所有认证数据记录
 	records, err := models.QueryRecordBtPhone(phone)
 

@@ -36,10 +36,11 @@ func NewPow(block Block) ProofOfWork{
 /**
  * pow算法：寻找符合条件的nonce值
  */
-func (p ProofOfWork) Run() int64{
+func (p ProofOfWork) Run() ([]byte,int64){
 	var nonce int64
 	//var bigBlock *big.Int
 	bigBlock := new(big.Int)
+	var block256Hash []byte
 	for {
 		block := p.Block
 
@@ -58,16 +59,19 @@ func (p ProofOfWork) Run() int64{
 		},[]byte{})
 		sha256Hash := sha256.New()
 		sha256Hash.Write(blockBytes)
-		block256Hash := sha256Hash.Sum(nil)
+		block256Hash = sha256Hash.Sum(nil)
+		//fmt.Printf("挖矿中，当前尝试Nonce值：%d\n",nonce)
 
 		//sha256Hash（区块+nonce） 对应的大整数
 		bigBlock = bigBlock.SetBytes(block256Hash)
+		//fmt.Printf("目标值：%x\n",p.Target)
+		//fmt.Printf("hash值：%x\n",bigBlock)
 
 		if p.Target.Cmp(bigBlock) == 1 {//如果满足条件时，退出循环
 			break
 		}
 		nonce++ //如果条件不满足，nonce值+1， 继续下次循环
+		//time.Sleep(100)
 	}
-
-	return nonce
+	return block256Hash,nonce
 }
