@@ -94,8 +94,6 @@ func (r *HomeController) Post(){
 		r.Ctx.WriteString("抱歉，认证数据上链失败，请重试")
 		return
 	}
-
-
 	//4、从数据库中读取phone用户对应的所有认证数据记录
 	records, err := models.QueryRecordBtPhone(phone)
 

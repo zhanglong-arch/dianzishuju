@@ -151,6 +151,43 @@ func NewBlockChain() BlockChain {
 }
 
 /**
+ * 该方法用于根据用户传入的认证id查询区块的信息，并返回
+ */
+func (bc BlockChain)QueryBlcokByCertId(cert_id []byte) (*Block, error){
+	var block *Block
+	db := bc.BoltDb
+	var err error
+	db.View(func(tx *bolt.Tx) error {
+		buckte :=tx.Bucket([]byte(BUCKET_NAME))
+		if buckte == nil{
+			err = errors.New("查询区块数据遇到错误！")
+			return err
+		}
+		//桶存在
+		eachHash := buckte.Get([]byte(LAST_KEY))
+		eachBig := new(big.Int)
+		zeroBig := big.NewInt(0)
+		for {
+			eachBlockBytes := buckte.Get(eachHash)
+			eachBlock, _ := DeSerialize(eachBlockBytes)
+			//找到的情况
+			if string(eachBlock.Data) == string(cert_id){
+				block = eachBlock
+				break
+			}
+			//找不到的情况：即已经找到创世区块，还没有找到，直接跳出循环
+			eachBig.SetBytes(eachBlock.PrevHash)
+			if eachBig.Cmp(zeroBig) == 0{
+				break
+			}
+			eachHash = eachBlock.PrevHash
+		}
+		return nil
+	})
+	return block,err
+}
+
+/**
  * 调用BlockChain的该SaveBlock方法，该方法可以将一个生成的新区块保存到chain.db文件中
  */
 func (bc BlockChain) SaveData(data []byte) (Block, error) {

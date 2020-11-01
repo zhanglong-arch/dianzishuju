@@ -4,15 +4,18 @@ import (
 	"BeegoDemo/blockchain"
 	"BeegoDemo/db_mysql"
 	_ "BeegoDemo/routers"
-	"fmt"
 	"github.com/astaxie/beego"
 )
 
 func main() {
-	//1、实例化一个区块链实例
-	bc := blockchain.NewBlockChain()
-	fmt.Println(bc)
-	return
+	//block := blockchain.CreateGenesisBlock()
+	//fmt.Println(block)
+	//fmt.Println(block.Hash)
+	//
+	////1、实例化一个区块链实例
+
+	//fmt.Println(bc)
+
 	//fmt.Printf("最新区块的Hash值：%x\n",bc.LastHash)
 	////数据被保存早height为1的区块当中
 	//fmt.Println(bc)
@@ -38,10 +41,10 @@ func main() {
 	//	return
 	//}
 	//for _, block := range blocks{
-	//	fmt.Println("高度：%d,哈希：%x,Prev哈希：%x\n",block.Height,block.Hash,block.PrevHash)
+	//	fmt.Printf("高度：%d,哈希：%x,Prev哈希：%x\n",block.Height,block.Hash,block.PrevHash)
 	//}
 	//return
-
+	blockchain.NewBlockChain()
 
 	db_mysql.ConnerDB()
 	//静态资源路径设置
