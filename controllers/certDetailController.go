@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"BeegoDemo/blockchain"
+	"BeegoDemo/models"
+	"BeegoDemo/util"
 	"fmt"
 	"github.com/astaxie/beego"
 	"strings"
@@ -28,7 +30,13 @@ func (c *CerDetailController) Get(){
 	if block == nil{
 		c.Ctx.WriteString("抱歉，未查询到链上数据，请重试")
 	}
-	c.Data["CertId"] = strings.ToUpper(string(block.Data))
+
+	certRecord, err := models.DeSerializeRecord(block.Data)
+	certRecord.CertHashStr = string(certRecord.CertHash)
+	certRecord.CertIdStr = strings.ToUpper(string(certRecord.CertId))
+	certRecord.CertTimeFormat = util.TimeFormat(certRecord.CertTime,0,util.TIME_FORMAT_THREE)
+
+	c.Data["CertRecord"] = certRecord
 
 	//2、跳转页面
 	c.TplName = "cert_detail.html"//显示并跳转到相应页面

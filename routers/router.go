@@ -28,4 +28,8 @@ func init() {
     beego.Router("/upload_file.html",&controllers.HomeController{})
     //查看认证数据的证书(cert_detail.html)
     beego.Router("/cert_detail.html",&controllers.CerDetailController{})
+    //浏览器中发起的连接跳转：用户实名认证
+    beego.Router("/user_kyc.html",&controllers.UserKycController{})
+    //用户实名认证功能接口
+    beego.Router("/user_kyc",&controllers.UserKycController{})
 }

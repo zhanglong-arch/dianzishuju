@@ -45,7 +45,7 @@ func (u UploadRecord) SaveRecord() (int64, error) {
 /**
  * 读取数据库中phone用户对应的所有认证数据
  */
-func QueryRecordBtPhone(phone string)([]UploadRecord, error){
+func QueryRecordByPhone(phone string)([]UploadRecord, error){
 	rs, err := db_mysql.Db.Query(" select id, file_name, file_size, file_cert, file_title, cert_time, phone from upload_record where phone = ?", phone)
 	if err != nil{
 		return nil, err

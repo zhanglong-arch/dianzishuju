@@ -1,6 +1,7 @@
 package blockchain
 
 import (
+	"BeegoDemo/models"
 	"errors"
 	"fmt"
 	"github.com/boltdb/bolt"
@@ -78,8 +79,8 @@ func (bc BlockChain) QueryBlockByHeight(height int64) *Block{
 		}
 		hashKey := bc.LastHash
 		for{
-			lasstBlockBytes := bucket.Get(hashKey)
-			eachBlock, _ := DeSerialize(lasstBlockBytes)
+			lastBlockBytes := bucket.Get(hashKey)
+			eachBlock, _ := DeSerialize(lastBlockBytes)
 			if eachBlock.Height < height{//给定的数字超出区块链中的区块高度，直接返回
 				break
 			}
@@ -167,11 +168,14 @@ func (bc BlockChain)QueryBlcokByCertId(cert_id []byte) (*Block, error){
 		eachHash := buckte.Get([]byte(LAST_KEY))
 		eachBig := new(big.Int)
 		zeroBig := big.NewInt(0)
+		var certRecord *models.CertRecord
 		for {
 			eachBlockBytes := buckte.Get(eachHash)
 			eachBlock, _ := DeSerialize(eachBlockBytes)
+			// 序列化以后的结构体数据certRecord 类型： eachBlock.Data
+			certRecord, _ = models.DeSerializeRecord(eachBlock.Data)
 			//找到的情况
-			if string(eachBlock.Data) == string(cert_id){
+			if string(certRecord.CertId) == string(cert_id){
 				block = eachBlock
 				break
 			}
