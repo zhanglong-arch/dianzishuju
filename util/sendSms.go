@@ -19,10 +19,11 @@ type SmsCode struct {
 }
 
 type SmsResult struct {
-	BizId		string
-	Code		string
-	Message		string
-	RequestId	string
+	//business 商业、业务
+	BizId		string	//业务编码	唯一
+	Code		string	//短信发送调用状态码：OK Failed
+	Message		string	//对应状态码的详细的说明信息
+	RequestId	string	//网络请求的id
 }
 
 /**

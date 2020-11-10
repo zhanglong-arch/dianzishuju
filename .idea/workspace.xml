@@ -2,34 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b8c1ff5-e35a-4831-9a6d-f0cc7166bc27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/userKycController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/app-d52b43a3a6600f37b259.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/common-d52b43a3a6600f37b259.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/Notification-0a19e.chunk.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/Setting-4599a.chunk.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/UserAttList-538b0.chunk.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/UserChart-515e7.chunk.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/UserKyc-ce20c.chunk.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/app-d52b43a3a6600f37b259.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/common-d52b43a3a6600f37b259.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/invite.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/xaf.js.下載" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/sendSms.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/user_kyc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/sendSmsController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/smsLoginController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/smsRecord.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/app-b96b577c6805d97d29c5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/common-b96b577c6805d97d29c5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/app-b96b577c6805d97d29c5.js.下載" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/common-b96b577c6805d97d29c5.js.下載" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/login_sms.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/login_sms_submit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/blockChain.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockChain.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chain.db" beforeDir="false" afterPath="$PROJECT_DIR$/chain.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/certDetailController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/certDetailController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userHomeController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/uploadFileController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userLoginController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userLoginController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/uploadFileController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/uploadFileController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/userRegisterController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userRegisterController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/CertRecord.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/certRecord.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/uploadRecord.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/uploadRecord.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/reload.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/hash.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/hash.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/sendSms.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/sendSms.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/cert_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/cert_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/list_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/list_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/user_kyc.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/user_kyc.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Go File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -67,7 +63,7 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,8 +74,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\golang\Goprojects\src\BeegoDemo\static\css" />
       <recent name="D:\golang\Goprojects\src\BeegoDemo\static\js" />
+      <recent name="D:\golang\Goprojects\src\BeegoDemo\static\css" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build BeegoDemo">
@@ -129,8 +125,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build BeegoDemo" />
-        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main" />
+        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -154,26 +150,26 @@
       <screen x="0" y="0" width="1549" height="831" />
     </state>
     <state x="516" y="82" key="#go_build_BeegoDemo_(1)/0.0.1549.831@0.0.1549.831" timestamp="1603278659151" />
-    <state x="398" y="167" key="FileChooserDialogImpl" timestamp="1604761388846">
+    <state x="398" y="167" key="FileChooserDialogImpl" timestamp="1604918824398">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state x="398" y="167" key="FileChooserDialogImpl/0.0.1549.831@0.0.1549.831" timestamp="1604761388846" />
-    <state width="729" height="121" key="GridCell.Tab.0.bottom" timestamp="1604767277190">
+    <state x="398" y="167" key="FileChooserDialogImpl/0.0.1549.831@0.0.1549.831" timestamp="1604918824398" />
+    <state width="1506" height="310" key="GridCell.Tab.0.bottom" timestamp="1605012875629">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="729" height="121" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1604767277190" />
-    <state width="729" height="121" key="GridCell.Tab.0.center" timestamp="1604767277190">
+    <state width="1506" height="310" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1605012875629" />
+    <state width="1506" height="310" key="GridCell.Tab.0.center" timestamp="1605012875629">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="729" height="121" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1604767277190" />
-    <state width="729" height="121" key="GridCell.Tab.0.left" timestamp="1604767277190">
+    <state width="1506" height="310" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1605012875629" />
+    <state width="1506" height="310" key="GridCell.Tab.0.left" timestamp="1605012875628">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="729" height="121" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1604767277190" />
-    <state width="729" height="121" key="GridCell.Tab.0.right" timestamp="1604767277190">
+    <state width="1506" height="310" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1605012875628" />
+    <state width="1506" height="310" key="GridCell.Tab.0.right" timestamp="1605012875629">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
-    <state width="729" height="121" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1604767277190" />
+    <state width="1506" height="310" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1605012875629" />
     <state x="936" y="127" key="RollbackChangesDialog" timestamp="1603849715631">
       <screen x="0" y="0" width="1549" height="831" />
     </state>

@@ -59,6 +59,7 @@ func (r *HomeController) Post(){
 
 	saveFile, err := os.OpenFile(uploadDir,os.O_RDWR | os.O_CREATE,777)
 	dsWriter := bufio.NewWriter(saveFile)
+
 	_, err = io.Copy(dsWriter,f)
 	//err := os.MkdirAll(uploadDir, 777)
 	if err != nil{
@@ -67,7 +68,6 @@ func (r *HomeController) Post(){
 		return
 	}
 	defer saveFile.Close()
-
 	//计算文件的hash值
 	hashFile, err := os.Open(uploadDir)
 	defer hashFile.Close()

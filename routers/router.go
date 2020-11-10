@@ -17,6 +17,7 @@ func init() {
     beego.Router("/login.html",&controllers.LoginController{})
     //用户登录请求接口
     beego.Router("/user_login",&controllers.LoginController{})
+    //请求用户注册的页面
     beego.Router("/zhuce_register",&controllers.RegisterController{})
     //存证确权跳转页面
     beego.Router("/list_record.html",&controllers.CunZhengQueQuan{})
@@ -32,4 +33,10 @@ func init() {
     beego.Router("/user_kyc.html",&controllers.UserKycController{})
     //用户实名认证功能接口
     beego.Router("/user_kyc",&controllers.UserKycController{})
+    //短信验证登录页面
+    beego.Router("/login_sms.html",&controllers.SmsLoginController{})
+    //发送验证码短信息
+    beego.Router("/send_sms",&controllers.SendSmsController{})
+    //调用登录接口，执行手机号和验证码登录
+    beego.Router("/login_sms",&controllers.SmsLoginController{})
 }

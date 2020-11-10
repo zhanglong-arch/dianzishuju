@@ -9,10 +9,16 @@ type RegisterController struct {
 	beego.Controller
 }
 
+/**
+ * 该方法用于处理在浏览器直接请求用户注册页面
+ */
 func (r *RegisterController) Get(){
 	r.TplName = "register.html"
 }
 
+/**
+ * 该方法用于处理用户注册的表单提交请求
+ */
 func (r *RegisterController) Post(){
 	//1、解析请求数据
 	var user models.User
